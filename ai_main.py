@@ -131,7 +131,7 @@ class FaceDetectorNode(Node):
             self.pose_callback,
             10)
         self.bridge = CvBridge()
-        self.get_logger().info("✅ FaceDetectorNode 已啟動")
+        self.get_logger().info(" FaceDetectorNode 已啟動")
 
         # 錄影變數
         self.out = None
@@ -182,12 +182,12 @@ class FaceDetectorNode(Node):
         fourcc = cv2.VideoWriter_fourcc(*'XVID')
         self.out = cv2.VideoWriter(filename,fourcc,20.0,(frame.shape[1],frame.shape[0]))
         self.recording=True
-        self.get_logger().info(f"🎥 開始錄影 {filename}")
+        self.get_logger().info(f" 開始錄影 {filename}")
         cv2.imwrite(filename.replace(".avi",".jpg"),frame)
         self.unknown_counter=0
 
     def stop_recording(self):
-        self.get_logger().info("⏹ 停止錄影")
+        self.get_logger().info(" 停止錄影")
         if self.out:
             time.sleep(0.5)
             self.out.release()
