@@ -25,14 +25,14 @@ class BatteryMonitor(Node):
 
         self.lock = lock
 
-        # Subscribe to the /battery_state topic
+        
         self.battery_state_subscriber = self.create_subscription(
             BatteryState,
             'battery_state',
             self.battery_state_callback,
             qos_profile_sensor_data)
 
-    # Callbacks
+  
     def battery_state_callback(self, batt_msg: BatteryState):
         with self.lock:
             self.battery_percent = batt_msg.percentage
@@ -71,7 +71,7 @@ def main(args=None):
     # Undock
     navigator.undock()
 
-    # Prepare goal poses
+    
     goal_pose = []
     goal_pose.append(navigator.getPoseStamped([-1.33696, -7.4321], TurtleBot4Directions.NORTH))
     goal_pose.append(navigator.getPoseStamped([23.5573, -5.1291], TurtleBot4Directions.WEST))
