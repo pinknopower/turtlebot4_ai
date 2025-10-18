@@ -14,8 +14,8 @@ from sensor_msgs.msg import BatteryState
 from turtlebot4_navigation.turtlebot4_navigator import TurtleBot4Directions, TurtleBot4Navigator
 
 BATTERY_HIGH = 0.95
-BATTERY_LOW = 0.2  # when the robot will go charge
-BATTERY_CRITICAL = 0.1  # when the robot will shutdown
+BATTERY_LOW = 0.2  
+BATTERY_CRITICAL = 0.1  
 
 
 class BatteryMonitor(Node):
